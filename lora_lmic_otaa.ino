@@ -134,7 +134,7 @@ void onEvent (ev_t ev)
         LMIC_X_DEBUG_PRINTS("EV_JOINING");
         break;
     case EV_JOINED:
-        LMIC_X_DEBUG_PRINTS("EV_JOINED");
+	Serial.println(F("EV_JOINED"));
 #if 0
         // Disable link check validation (automatically enabled
         // during join, but not supported by TTN at this time).
@@ -170,7 +170,7 @@ void onEvent (ev_t ev)
         LMIC_X_DEBUG_PRINTS("EV_REJOIN_FAILED");
         break;
     case EV_TXCOMPLETE:
-        LMIC_X_DEBUG_PRINTS("EV_TXCOMPLETE");
+        Serial.println("EV_TXCOMPLETE");
         if (LMIC.txrxFlags & TXRX_ACK)
             LMIC_X_DEBUG_PRINTS("Received ack");
         if (LMIC.dataLen) {
